@@ -13,8 +13,8 @@
                         'username': form.username.value,
                         'password': form.password.value
                     });
-
-                    fetch('http://localhost:1337/login', {
+//denne fetch smider os hen til vores admin side hvor man kan rette, slette og tilføje produkter
+                    fetch('http://localhost:3000/login.html', {
                         'method': 'POST',
                         'headers': {
                             'Accept': 'application/json',
