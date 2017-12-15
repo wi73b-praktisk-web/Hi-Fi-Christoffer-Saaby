@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 06. 10 2017 kl. 13:12:38
+-- Genereringstid: 14. 12 2017 kl. 09:08:43
 -- Serverversion: 10.1.26-MariaDB
 -- PHP-version: 7.1.8
 
@@ -25,13 +25,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur-dump for tabellen `accestokens`
+--
+
+CREATE TABLE `accestokens` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `token` varchar(600) NOT NULL,
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `accestokens`
+--
+
+INSERT INTO `accestokens` (`id`, `userid`, `token`, `created`) VALUES
+(1, 1, '6046b786d97f8fff54f76debae75aad5875277a59a9e7743c2baa040db07e2af09b7dd98df6486ad9ada831c092bef0d206ee89feee1859257e8725f9efe9cb840c8d2182151cb5d69d059906a083bfe3e7d808565ab40c51dc0dea58cedff14c4c584e8713562617bbfe51b82e5c36c09e488146ba2780839f82d4eaa4731d9707169393b1fcd77270d61b17af10ac44d0379bf32385d08803f772be6dd4da5b7c2dce89df54d242ec942b3eb3a3440ec4da7b543127e5b6e0d875fa3849661857f78e08592da783bf0da87213b0867642fc2f57eb883bc381248e61c3bb3c87f87675a8955f2a7380b31756c500cfdba43b71fe50c8644d568f0cc79b3a903', '2017-11-09 12:40:23'),
+(2, 1, 'f7fc94c3836b55725ccc89a56e9fe7f1b9925c83ae516e59ffa3d8d4127690a844ed8a6f5adeb8678d55a39e5ff0dfaff2704f6d2e8c9fffa9b893dd57f0b49c6ac4aa74158c6d567be4bd8126fc40689138951b60cde5cf5545e9d6787a86f5fcd1173e9acc7e8488b464b251adbfd9d7418b2d952b5ddc931b2de14736260b001d474ecb60dcffdbac16ce35539e15c3265e1e07c562db46255d4c76c7f444756058af589a763591138a5b9294fd7e158d4b3a287308cee6593d125a6a4976bd4385ceff102b105e2cb88d98337b5095cadb70dfb32afd8ba1efde5ef1f7df5a2efafb516043132c23a972f51039fe79266c6d1588f82cdced4923da5ac124', '2017-11-09 12:41:37');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur-dump for tabellen `bruger`
 --
 
 CREATE TABLE `bruger` (
   `Id` int(10) NOT NULL,
   `Username` varchar(20) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(500) NOT NULL,
   `Email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,8 +61,9 @@ CREATE TABLE `bruger` (
 --
 
 INSERT INTO `bruger` (`Id`, `Username`, `Password`, `Email`) VALUES
-(1, 'admin', '1234', 'admin@admin.dk'),
-(2, 'ChristofferSaaby', '123qweasdzxc', 'Madman1@live.dk');
+(1, 'admin', 'sha1$804cf862$1$115c440807b35e4aa428c3935a90c0dd684432f8', 'admin@admin.dk'),
+(2, 'ChristofferSaaby', 'christoffer123', 'Madman1@live.dk'),
+(3, 'MartinLaursen', 'martin123', 'martin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -123,6 +145,12 @@ INSERT INTO `varegrupper` (`Id`, `Gruppe`, `billede`) VALUES
 --
 
 --
+-- Indeks for tabel `accestokens`
+--
+ALTER TABLE `accestokens`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks for tabel `bruger`
 --
 ALTER TABLE `bruger`
@@ -148,10 +176,15 @@ ALTER TABLE `varegrupper`
 --
 
 --
+-- Tilføj AUTO_INCREMENT i tabel `accestokens`
+--
+ALTER TABLE `accestokens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- Tilføj AUTO_INCREMENT i tabel `bruger`
 --
 ALTER TABLE `bruger`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Tilføj AUTO_INCREMENT i tabel `vare`
 --
@@ -161,7 +194,7 @@ ALTER TABLE `vare`
 -- Tilføj AUTO_INCREMENT i tabel `varegrupper`
 --
 ALTER TABLE `varegrupper`
-  MODIFY `Id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;COMMIT;
+  MODIFY `Id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

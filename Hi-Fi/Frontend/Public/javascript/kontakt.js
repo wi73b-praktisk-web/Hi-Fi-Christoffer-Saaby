@@ -1,3 +1,12 @@
+(() => {
+document.addEventListener('DOMcontentLoaded', () =>{
+    document.querySelector('#send').addEventListener('click', () => {
+        const form = document.querySelector('#kontakt');
+        formular(form);
+    })
+})
+})();
+
 function formular(form) {
     var send = true;
     if (form.navn.value == 0) {
