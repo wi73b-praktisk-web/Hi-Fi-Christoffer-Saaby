@@ -14,7 +14,7 @@
                         'password': form.password.value
                     });
 
-                    fetch('http://localhost:1337/login', {
+                    fetch('http://localhost:1337/login.js', {
                         'method': 'POST',
                         'headers': {
                             'Accept': 'application/json',

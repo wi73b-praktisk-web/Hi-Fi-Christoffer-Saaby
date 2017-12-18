@@ -37,6 +37,8 @@ function getParameterByName(name, url) {
     }
  }
  
+
+ 
  document.addEventListener("DOMContentLoaded", event => {
  
     // forudfyld formular hvis der skal redigeres
