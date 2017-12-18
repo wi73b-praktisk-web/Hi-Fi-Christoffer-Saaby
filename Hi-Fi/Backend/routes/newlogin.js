@@ -5,9 +5,7 @@ const crypto = require('crypto');
 module.exports = (app) => {
     app.post('/login', (req, res) => {
         if (req.body.password !== '' && req.body.username !== '') {
-            console.log(passwordHash.generate(req.body.password));
-            console.log('username', req.body.username);
-            console.log('password', req.body.password);
+
             db.execute('SELECT Id, Password FROM bruger WHERE Username = ?', [req.body.username], (selError, rows) => {
                 if (selError) {
                     console.log();

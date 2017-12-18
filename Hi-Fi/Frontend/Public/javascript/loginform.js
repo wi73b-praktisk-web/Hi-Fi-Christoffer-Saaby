@@ -7,11 +7,13 @@
             if (localStorage.getItem('token')) {
                 if (confirm('Du er logget ind\n\nVil du logge af?')) {
                     localStorage.clear();
-                } else {
-                    console.log('test');
+                } 
+            }
+            else {
+
                     const data = JSON.stringify({
-                        'username': form.username.value,
-                        'password': form.password.value
+                        'Username': form.username.value,
+                        'Password': form.password.value
                     });
 
                     fetch('http://localhost:1337/login.js', {
@@ -39,7 +41,7 @@
                 };
             }
         }
-    });
+    );
 })();
 
 document.getElementById('logud').addEventListener('click', () => {
