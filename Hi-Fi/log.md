@@ -1,10 +1,15 @@
-#HI-FI projekt
+#log
 
-**Uge1**
-Den første uge gik rigtig godt, jeg fik en god start på projektet. Jeg vil lavet min database samt fik jeg ændret i min html og css som jeg fik fra bootstrap. Jeg havde problemer med fetch, men jeg ville gerne give mig selv en chance for at finde ud af det selv uden hjælp. Det endte så med at jeg kom for langt bagud og begyndte at arbejde sammen med Christoffer, da han havde det samme problem. Vi begyndte at arbejde sammen og prøvede at finde en løsning selv.
+**uge 1**
+ den første uge gik i starten godt jerg fik lavet min database og mit HTML/CSS dog kom der også problemer i løbet af ugen jeg kunne ikke få min fetch funktion til at hente informationer fra min database dette var et problem der stod på forlænge pga min stædighed når jeg støder på problemer sidder jeg og arbejder med dem til de virker dog skete dette ikke og jeg spurgte min sidemand martin om han kunne hjælpe mig.
 
-**Uge2**
-Christoffer og jeg arbejdede stadig sammen, vi var inde og lede efter informationer som kunne hjælpe os. Vi prøvede os frem med forskellige metoder, hvilket gjorde at vi fik roddet for meget rundt i vores struktur og måtte starte forfra. Da det blev torsdag endte vi med at snakke med Peter som kunne hjælpe os med at komme på rette spor igen. Han hjalp os med at få sat vores struktur op, samt få vores produkter til at vises på hjemmesiden.
+ **uge 2**
+ mig og martin sad og prøvede at få det hele til at virke men da det blev onsdag/torsdag bad vi peter og hjælpe han kom ned og så at vi havde den forkerte struktur opbygning så gunden til at det ikke virkede var fordi min fil struktutr med routes og app filerne ikke var rigtig så derfor slettede jeg det hele og fik peters hjælpe til at sætte det rigtigt op og for at indhente den tabte tid arbejde mig og martin sammen for måske at kunne indhente de andre. vi startede derfor med at lave en ny fil struktur.
 
-**Uge3**
-Den her uge gik på at få vist kategorierne også få lavet links til de bestemte kategorier. Det gav igen mange problemer, heldigvis kunne Frank hjælpe og kigge på hvad der var galt. Først var vores struktur galt igen, så den måtte vi rette op på. Frank hjalp også med at få installeret de rigtige ting som vi skulle bruge. Der var for mange node modules også manglede vi en package.json fil. Vi arbejede videre og fik rette det hele til. Til sidst kom Ady og hjalp med de sidste ting som gav problemer. Vi fik lavet det med kategorierne så det hele passede som det skulle også hjalp Ady med at give den sidste forståelse for det vi har lavet. Derefter blev der skrevet en del noter i vores kode så vi kan gå ind og genbruge samt læse noter så det nemt kan forståes.
+ **uge 3** 
+efter at have sat templaten op og routne fik vi peters hælpe igen for at hente informationer ned fra databasen og ind i vores HTML til dette gjorde vi brug af funktionen AppendChild da dette ikke virkede efter et par forsøg forslog peter at vi gik hen og brugte funktionen forEach i stedet for og dette virkede sådan så vi fik hentet data ned fra databasen udover billeder af en eller anden grund. her efter gjorde vi sådan så den hentede informationer ned og sorterede dem efter gruppe. nu har mig og martin snakket med frank i fredags og fundet ud af at det vi har lavet er forkert og har været nød til at starte forfra igen med at få opbygget det hele rigtigt igen vi har til dette brugt adys hjælpe meget til at få lavet functionerne sådan så vi kan kalde databasen der var meget viden man skulle have ind og en masse man skulle huske. det lykkedes os at kunne hiven alle vare ud fra databasen og hive varegrupper ud og få det sat let op sådan så man kan bruge det i fremtiden.
+
+
+
+**konklusion**
+jeg syntes ikke der er noget lærerne kan gøre bedre de har været gode til at bevæge sig rundt og hjælpe folk til de kunne klare sig. jeg skal dog blive bedre til at spørger lærerne om hjælpe i stedet for at sidde og bruge for lang tid på selv at prøve at finde en løsning. jeg havde jo også problemer i starten med fil strukturen men det er noget der bare skal arbejdes mere med for at det sidder bedre under huden. så alt i alt er det mig der skal blive bedre til nogle ting og blive meget bedre til at spørger om hjælpe for da jeg sad med frank og ady lykkedes det at forstå det hele meget bedre.

@@ -1,42 +1,39 @@
 (() => {
-document.addEventListener('DOMcontentLoaded', () =>{
-    document.querySelector('#send').addEventListener('click', () => {
-        const form = document.querySelector('#kontakt');
-        formular(form);
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#send').addEventListener('click', () =>{
+            const form = document.querySelector('#kontakt');
+            //console.log(form);
+            formular(form);
+        })
     })
-})
 })();
 
 function formular(form) {
     var send = true;
+    //Navn validering start
     if (form.navn.value == 0) {
         document.getElementById("navn_validering").innerHTML = "Udfyld venligst navn.";
         form.navn.focus();
         (document.getElementById("navn").style.borderColor = 'red');
-        send = false;
-        
+        send = false;  
     }else{
         navn.style.borderColor ="grey";
         document.getElementById("navn_validering").innerHTML = "";
     }
-
+    //Telefon vaildering start
     if (form.telefon.value == 0) {
         document.getElementById("telefon_validering").innerHTML = "Udfyld venligst telefon.";
         form.telefon.focus();
         (document.getElementById("telefon").style.borderColor = 'red');
         send = false;
-        
-       
-        }else{
+        } else {
         if (isNaN(form.telefon.value))
         {
         document.getElementById("telefon_validering").innerHTML = "Dette er ikke et tal.";
         form.telefon.focus();
         (document.getElementById("telefon").style.borderColor = 'red');
         send = false;  
-        }
-        else
-        {
+        } else {
             if(form.telefon.value.length !=8)
             {
         document.getElementById("telefon_validering").innerHTML = "Dette er ikke et gyldigt telefon nummer.";
@@ -51,32 +48,30 @@ function formular(form) {
             }
         }
     }
-    
+    //Email validering start
     if (form.email.value == 0) {
         document.getElementById("email_validering").innerHTML = "Udfyld venligst email.";
         form.email.focus();
         (document.getElementById("email").style.borderColor = 'red');
         send = false;
-        
-     }
-    else
-    {
-       if(checkEmail(form.email.value))
-    {
+     } else {
+       if(checkEmail(form.email.value)) {
         email.style.borderColor ="gray";
         document.getElementById("email_validering").innerHTML = "";
-    }
-        else
-    {
+    } else {
         document.getElementById("email_validering").innerHTML = "Der er ugyldige eller manglende tegn.";
         form.email.focus();
         (document.getElementById("email").style.borderColor = 'red');
         send = false;
     }
-}
-    return send;
+   if (form.send) {
+       console.log(form.send);
+    //document.getElementById("send").innerHTML = "Succes. Du har sendt din data til os.";
+   }
 }
 
+    return send;
+}
 function checkEmail(email){
  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
  if (filter.test(email)){

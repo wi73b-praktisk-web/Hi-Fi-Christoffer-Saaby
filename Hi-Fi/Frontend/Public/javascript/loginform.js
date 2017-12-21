@@ -3,6 +3,8 @@
         const form = document.querySelector('.loginForm');
 
         form.onsubmit = () => {
+            console.log(form.username.value);
+            console.log(form.password.value);
             const data = JSON.stringify({
                 'username': form.username.value,
                 'password': form.password.value
@@ -15,18 +17,20 @@
                     'Content-Type': 'application/json',
                     'Content-Length': data.length
                 },
-                'mode': 'no-cors',
+                'mode': 'cors',
                 'cache': 'default',
                 'body': data
             })
-                .then((result) => result.json())
-                .then((data) => {
+            .then((result) => result.json())
+            .then((data) => {
+                console.log(data);
                     localStorage.setItem('token', data.AccessToken);
                     localStorage.setItem('userid', data.ID);
-                    document.getElementById('status').innerHTML = "Du er logget ind ...";
+                    // document.getElementById('status').innerHTML = "Du er logget ind ...";
+                    window.location.assign('adminsite.html');
                 })
                 .catch((err) => {
-                    //console.log(err);
+                    console.log(err);
                 });
 
             return false;

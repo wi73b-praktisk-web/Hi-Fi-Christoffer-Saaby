@@ -1,4 +1,4 @@
-const db = require('../config/mysql').connect();
+const db = require('../config/sql').connect();
 const passwordHash = require('password-hash');
 const crypto = require('crypto');
 
@@ -14,11 +14,10 @@ module.exports = {
      * @param {function} next - callback function
      */
     'isAuthenticated': (req, res, next) => {
-        return next();
-        console.log(req.header('Authorization'));
+        console.log(req.header('Authorization').length);
         if (req.header('Authorization') && req.header('userID')) {
             const query = `SELECT token, created
-            FROM accesstokens
+            FROM accestokens
             WHERE userid = ?
                 and token = ?
             ORDER BY created DESC LIMIT 1`;
@@ -29,8 +28,8 @@ module.exports = {
                 }
                 else if (rows.length === 0) return res.send(401);
                 else if (rows.length === 1) {
-                    if ((new Date - rows[0].created) < (1000 * 60 * 60)) {
-                        db.execute('DELETE FROM accesstokens WHERE token = ?', [rows[0].idaccesstokens], (error) => {
+                    if ((new Date - rows[0].created) > (1000 * 60 * 60)) {
+                        db.execute('DELETE FROM accestokens WHERE token = ?', [rows[0].idaccestokens], (error) => {
                             return res.send(401);
                         });
                     } else {
