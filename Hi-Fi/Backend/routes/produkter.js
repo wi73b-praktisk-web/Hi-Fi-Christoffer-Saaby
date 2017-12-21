@@ -1,6 +1,6 @@
 const restify = require('restify');
 const path = require('path');
-const mysql = require(path.join(__dirname, '..', 'config', 'sql'));
+const mysql = require(path.join(__dirname, '..', 'config', 'mysql'));
 
 module.exports = (app) => {
 

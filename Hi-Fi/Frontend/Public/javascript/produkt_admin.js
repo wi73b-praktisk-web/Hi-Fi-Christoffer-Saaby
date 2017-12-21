@@ -27,7 +27,7 @@ function getParameterByName(name, url) {
        fetch(request)
           .then(response => {
              if (response.status == 204) {
-                window.location.replace(`index.html`);
+                window.location.replace(`adminsite.html`);
              } else {
                 throw new Error('Produkt blev ikke slettet');
              }
